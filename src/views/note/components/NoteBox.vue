@@ -12,7 +12,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, toRefs, PropType } from "vue";
+import {
+  defineComponent, computed, toRefs, PropType,
+} from 'vue';
 
 interface Note {
   title: string;
@@ -24,7 +26,7 @@ interface Note {
 }
 
 export default defineComponent({
-  name: "NoteBox",
+  name: 'NoteBox',
   props: {
     note: {
       type: Object as PropType<Note>,
@@ -34,10 +36,10 @@ export default defineComponent({
   setup(props) {
     const { note } = toRefs(props);
     const target = computed(() => {
-      if (note.value?.url === "javascipt:;") {
-        return "_self";
+      if (note.value?.url === 'javascipt:;') {
+        return '_self';
       }
-      return "_blank";
+      return '_blank';
     });
     return {
       target,
@@ -46,8 +48,8 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-/* .box {
+<style lang="postcss" scoped>
+.box {
   display: flex;
   flex-flow: column;
   position: relative;
@@ -59,7 +61,7 @@ export default defineComponent({
   transition: transform 0.2s linear;
   cursor: pointer;
   &::before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 0;
@@ -104,7 +106,7 @@ export default defineComponent({
       padding: 0 30px;
       color: #414a60;
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         left: 16px;
         top: 50%;
@@ -116,5 +118,5 @@ export default defineComponent({
       }
     }
   }
-} */
+}
 </style>
