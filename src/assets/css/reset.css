@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+:root {
+  --blue: #007bff;
+  --light-blue: #03a9f4;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --gray-light: #9fa3af;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --bg: #fffefd;
+}
+
+a,
+b,
+body,
+button,
+dd,
+div,
+dl,
+em,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+input,
+label,
+li,
+nav,
+p,
+select,
+span,
+td,
+textarea,
+u,
+ul,
+main,
+section,
+article,
+header,
+footer,
+canvas,
+pre {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: none;
+}
+
+canvas {
+  display: block;
+}
+
+li,
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--info);
+}
+
+a:active,
+a:focus,
+a:hover,
+button,
+input,
+textarea {
+  outline: 0;
+}
+
+a:hover {
+  color: var(--light-blue) !important;
+  text-decoration: none;
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+img {
+  border: none;
+}
+
+map area {
+  outline: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+body,
+button,
+input,
+option,
+select,
+td,
+textarea {
+  font-family: arial, verdana, helvetica, 'PingFang SC', 'HanHei SC', STHeitiSC-Light, Microsoft Yahei, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input[type='button'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='submit'],
+input[type='tel'],
+input[type='text'],
+textarea {
+  -webkit-appearance: none;
+}
+
+body {
+  background: var(--bg);
+  line-height: 26px;
+  color: var(--dark);
+  font-size: 14px;
+  font-family: 'SF Pro SC', 'SF Pro Text', 'SF Pro Icons', PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB,
+    Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif !important;
+}
+
+.btn:hover,
+.ipt:hover {
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+::selection {
+  color: var(--white);
+  background: var(--light-blue);
+}
