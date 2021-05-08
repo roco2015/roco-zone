@@ -8,8 +8,8 @@
       <h5 class="title">{{ note.title }}</h5>
       <div class="sub-title">{{ note.subTitle }}</div>
     </a>
-    <div class="footer">
-      <router-link v-if="note.demo" :to="{ name: 'demo', params: { name: note.demo } }" class="item">demo</router-link>
+    <div v-if="note.demo || note.code " class="footer">
+      <router-link v-if="note.demo" :to="{ name: note.demo }" class="item">demo</router-link>
       <a v-if="note.code" :href="note.code" target="_blank" class="item">code</a>
     </div>
   </div>
@@ -76,7 +76,7 @@ export default defineComponent({
   }
 
   .link {
-    padding: 20px 30px;
+    padding: 30px 40px;
     color: #414a60;
   }
 

@@ -11,7 +11,13 @@ import {
 
 export default defineComponent({
   name: 'TheFixedHeader',
-  setup() {
+  props: {
+    scrollDistance: {
+      type: Number,
+      default: 150,
+    },
+  },
+  setup(props) {
     const fixedHeaderVisible = ref(false);
 
     const handleScroll = (event: Event) => {
@@ -20,7 +26,7 @@ export default defineComponent({
         return;
       }
       const { scrollTop } = targetEl.documentElement;
-      fixedHeaderVisible.value = scrollTop > 150;
+      fixedHeaderVisible.value = scrollTop > props.scrollDistance;
     };
 
     onMounted(() => {

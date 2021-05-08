@@ -21,5 +21,6 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
     'max-len': ['error', { code: 120, ignoreComments: true, ignoreUrls: true }],
+    'no-plusplus': 'off',
   },
 };

@@ -117,7 +117,7 @@ option,
 select,
 td,
 textarea {
-  font-family: arial, verdana, helvetica, 'PingFang SC', 'HanHei SC', STHeitiSC-Light, Microsoft Yahei, sans-serif;
+  font-family: Avenir, Helvetica, Arial, verdana, 'PingFang SC', 'HanHei SC', STHeitiSC-Light, Microsoft Yahei, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 

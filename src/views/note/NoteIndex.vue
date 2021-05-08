@@ -1,6 +1,6 @@
 <template>
   <main class="note-wrap">
-    <the-fixed-header></the-fixed-header>
+    <the-fixed-header :scroll-distance="50"></the-fixed-header>
     <router-view></router-view>
     <the-footer></the-footer>
   </main>
