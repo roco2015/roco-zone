@@ -1,0 +1,5 @@
+@font-face {
+  font-family: muyaosoftbrush;
+  src: url('@/assets/font/muyaosoftbrush.ttf') format("TrueType");
+  font-display: swap;
+}

@@ -1,7 +1,7 @@
 <template>
   <div class="nav">
     <header class="header">
-      <router-link :to="{ name: 'index' }" class="logo"></router-link>
+      <router-link :to="{ name: 'index' }" class="header-logo"></router-link>
       <div class="header-icon">
         <a href="https://github.com/roco2015" target="_blank" title="roco2015@github.com">
           <svg class="svg-icon" aria-hidden="true">
@@ -18,6 +18,10 @@
             <use xlink:href="#icon-email" />
           </svg>
         </a>
+      </div>
+      <div class="header-motto">
+        <span class="motto-1">半仙算我命里多水</span>
+        <span class="motto-2">随处去浪</span>
       </div>
     </header>
     <ul class="menu">
@@ -88,30 +92,46 @@ export default defineComponent({
     line-height: 64px;
     margin-bottom: 20px;
     padding-top: 60px;
-  }
-
-  .logo {
-    align-self: stretch;
-    width: 100px;
-    margin: 0 15px;
-    background: url("@/assets/images/logo.png") no-repeat center;
-    background-size: contain;
-    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
-  }
-  .header-icon {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-    font-size: 22px;
-    .svg-icon {
-      margin-right: 20px;
-      color: var(--dark);
+    .header-logo {
+      align-self: stretch;
+      width: 100px;
+      margin: 0 15px;
+      background: url("@/assets/images/logo.png") no-repeat center;
+      background-size: contain;
+      filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
     }
-    .icon-qq {
-      font-size: 0.96em;
+    .header-icon {
+      display: flex;
+      flex: 1;
+      margin-left: 20px;
+      font-size: 22px;
+      .svg-icon {
+        margin-right: 20px;
+        color: var(--dark);
+      }
+      .icon-qq {
+        font-size: 0.96em;
+      }
+      .icon-email {
+        font-size: 1.1em;
+      }
     }
-    .icon-email {
-      font-size: 1.1em;
+    .header-motto {
+      font-family: muyaosoftbrush, arial, verdana, helvetica,
+                  'PingFang SC', 'HanHei SC', STHeitiSC-Light, Microsoft Yahei, sans-serif;
+      .motto-1 {
+        display: block;
+        position: absolute;
+        top: 50%;
+        line-height: 1;
+        font-size: 30px;
+        transform: translateY(-100%);
+      }
+      .motto-2 {
+        display: block;
+        line-height: 1;
+        font-size: 20px;
+      }
     }
   }
   .menu {

@@ -1,14 +1,15 @@
 {
     "editor.fontFamily": "Lucida Console,Consolas,Monaco,Andale Mono,Ubuntu Mono,Menlo, Monaco, 'Courier New', monospace",
-    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll": true,
-      "source.fixAll.eslint": true
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true
     },
     "eslint.format.enable": true,
     "[json]": {
       "editor.defaultFormatter": "vscode.json-language-features"
     },
+    "stylelint.config": {},
     "vetur.format.enable": false,
     "workbench.colorTheme": "GitHub Plus",
 }
