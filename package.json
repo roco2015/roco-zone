@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lintcss": "stylelint '**/*.css' --fix"
   },
   "dependencies": {
     "@types/node": "^15.0.2",
