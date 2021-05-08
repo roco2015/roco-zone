@@ -1,6 +1,10 @@
 <template>
   <div class="box">
-    <a :href="note.url" :target="target" class="link">
+    <router-link v-if="note.routeName" :to="{ name: note.routeName }" class="link">
+      <h5 class="title">{{ note.title }}</h5>
+      <div class="sub-title">{{ note.subTitle }}</div>
+    </router-link>
+    <a v-if="!note.routeName" :href="note.url" class="link">
       <h5 class="title">{{ note.title }}</h5>
       <div class="sub-title">{{ note.subTitle }}</div>
     </a>
@@ -13,7 +17,7 @@
 
 <script lang="ts">
 import {
-  defineComponent, computed, toRefs, PropType,
+  defineComponent, PropType,
 } from 'vue';
 
 interface Note {
@@ -32,18 +36,6 @@ export default defineComponent({
       type: Object as PropType<Note>,
       required: true,
     },
-  },
-  setup(props) {
-    const { note } = toRefs(props);
-    const target = computed(() => {
-      if (note.value?.url === 'javascipt:;') {
-        return '_self';
-      }
-      return '_blank';
-    });
-    return {
-      target,
-    };
   },
 });
 </script>

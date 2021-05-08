@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div class="header-wrap">
     <header class="header">
       <router-link :to="{ name: 'index' }" class="logo"></router-link>
       <div class="header-icon">
@@ -13,7 +13,7 @@
             <use xlink:href="#icon-qq" />
           </svg>
         </a>
-        <a>
+        <a title="roco2015@163.com">
           <svg class="svg-icon icon-email" aria-hidden="true">
             <use xlink:href="#icon-email" />
           </svg>
@@ -29,42 +29,15 @@
         <router-link :to="{ name: item.name }" class="link">{{ item.title }}</router-link>
       </li>
     </ul>
-    <header :class="{ show: fixedHeaderVisible }" class="header-fixed">
-      <router-link :to="{ name: 'index' }" class="logo"></router-link>
-    </header>
   </div>
 </template>
 
 <script lang="ts">
-import {
-  defineComponent, ref, onMounted, onBeforeUnmount,
-} from 'vue';
+import { defineComponent } from 'vue';
 import navList from './data/nav.json';
 
 export default defineComponent({
   name: 'TheNav',
-  setup() {
-    const fixedHeaderVisible = ref(false);
-
-    const handleScroll = (event: Event) => {
-      const targetEl = event?.target;
-      if (!targetEl || !(targetEl instanceof Document)) {
-        return;
-      }
-      const { scrollTop } = targetEl.documentElement;
-      fixedHeaderVisible.value = scrollTop > 150;
-    };
-
-    onMounted(() => {
-      window.addEventListener('scroll', handleScroll);
-    });
-    onBeforeUnmount(() => {
-      window.removeEventListener('scroll', handleScroll);
-    });
-    return {
-      fixedHeaderVisible,
-    };
-  },
   data() {
     return {
       navList,
@@ -82,20 +55,20 @@ export default defineComponent({
   vertical-align: -0.15em;
 }
 
-.nav {
+.logo {
+  align-self: stretch;
+  width: 100px;
+  margin: 0 15px;
+  background: url("@/assets/images/logo.png") no-repeat center;
+  background-size: contain;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+}
+
+.header-wrap {
   height: 200px;
   margin: 0 auto;
   padding: 0 15px;
   font-weight: 500;
-
-  .logo {
-    align-self: stretch;
-    width: 100px;
-    margin: 0 15px;
-    background: url("@/assets/images/logo.png") no-repeat center;
-    background-size: contain;
-    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
-  }
 
   .header {
     display: flex;
@@ -168,26 +141,6 @@ export default defineComponent({
         padding: 0 10px;
         color: var(--dark);
       }
-    }
-  }
-
-  .header-fixed {
-    display: flex;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    right: 0;
-    left: 0;
-    align-items: center;
-    height: 50px;
-    transform: translateY(-100%);
-    transition: all 0.3s ease-out;
-    background: rgba(255, 250, 240, 0.95);
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
-    line-height: 50px;
-
-    &.show {
-      transform: translateY(0);
     }
   }
 }
