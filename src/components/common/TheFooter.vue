@@ -20,28 +20,30 @@ export default class Footer extends Vue {}
 <style lang="less" scoped>
 .footer {
   position: relative;
-  margin: 30px auto 0;
   height: 50px;
+  margin: 30px auto 0;
+  overflow: hidden;
   color: white;
   font-size: 14px;
-  overflow: hidden;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
 }
 
 .copyright {
   display: flex;
-  justify-content: center;
   flex-flow: row wrap;
+  justify-content: center;
+
   a {
     margin-right: 30px;
-    white-space: nowrap;
     color: white;
+    white-space: nowrap;
   }
+
   .icon {
-    float: left;
     width: 14px;
     height: 14px;
     margin-top: 6px;
+    float: left;
   }
 }
 </style>

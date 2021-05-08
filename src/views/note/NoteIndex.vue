@@ -34,17 +34,21 @@ export default defineComponent({
 .note-wrap {
   width: 950px;
   margin: 0 auto;
+
   .title {
     text-align: left;
   }
 }
+
 .sec-note {
   margin-top: 60px;
+
   .sub-title {
     margin-top: 20px;
     border-bottom: 1px solid var(--gray-light);
     text-align: left;
   }
+
   .inner {
     display: flex;
     position: relative;

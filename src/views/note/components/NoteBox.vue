@@ -51,15 +51,16 @@ export default defineComponent({
 <style lang="postcss" scoped>
 .box {
   display: flex;
-  flex-flow: column;
   position: relative;
+  flex-flow: column;
   margin: 15px;
-  background: white;
   overflow: hidden;
-  box-shadow: 0 9px 25px -22px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
   transition: transform 0.2s linear;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 9px 25px -22px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+
   &::before {
     content: "";
     display: block;
@@ -68,13 +69,15 @@ export default defineComponent({
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    pointer-events: none;
     transition: opacity 0.2s linear;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
   }
+
   &:hover {
     transform: translateY(-5px);
+
     &::before {
       opacity: 1;
     }
@@ -90,31 +93,33 @@ export default defineComponent({
   }
 
   .sub-title {
-    font-size: 12px;
     opacity: 0.9;
+    font-size: 12px;
   }
 
   .footer {
     margin-top: -20px;
-    line-height: 20px;
     background: rgba(0, 0, 0, 0.1);
     font-size: 12px;
+    line-height: 20px;
+
     .item {
       display: block;
       position: relative;
       height: 20px;
       padding: 0 30px;
       color: #414a60;
+
       &::before {
         content: "";
         position: absolute;
-        left: 16px;
         top: 50%;
+        left: 16px;
         width: 6px;
         height: 6px;
-        background: #f6f6f8;
-        border-radius: 50%;
         transform: translateY(-50%);
+        border-radius: 50%;
+        background: #f6f6f8;
       }
     }
   }

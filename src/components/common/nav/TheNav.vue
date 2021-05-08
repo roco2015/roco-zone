@@ -77,21 +77,24 @@ export default defineComponent({
 .svg-icon {
   width: 1em;
   height: 1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
   overflow: hidden;
+  fill: currentColor;
+  vertical-align: -0.15em;
 }
+
 .nav {
   height: 200px;
   margin: 0 auto;
   padding: 0 15px;
   font-weight: 500;
+
   .header {
     display: flex;
     height: 124px;
-    line-height: 64px;
     margin-bottom: 20px;
     padding-top: 60px;
+    line-height: 64px;
+
     .header-logo {
       align-self: stretch;
       width: 100px;
@@ -100,47 +103,65 @@ export default defineComponent({
       background-size: contain;
       filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
     }
+
     .header-icon {
       display: flex;
       flex: 1;
       margin-left: 20px;
       font-size: 22px;
+
       .svg-icon {
         margin-right: 20px;
         color: var(--dark);
       }
+
       .icon-qq {
         font-size: 0.96em;
       }
+
       .icon-email {
         font-size: 1.1em;
       }
     }
+
     .header-motto {
-      font-family: muyaosoftbrush, arial, verdana, helvetica,
-                  'PingFang SC', 'HanHei SC', STHeitiSC-Light, Microsoft Yahei, sans-serif;
+      font-family:
+        muyaosoftbrush,
+        arial,
+        verdana,
+        helvetica,
+        'PingFang SC',
+        'HanHei SC',
+        STHeitiSC-Light,
+        Microsoft Yahei,
+        sans-serif;
+
       .motto-1 {
         display: block;
         position: absolute;
         top: 50%;
-        line-height: 1;
-        font-size: 30px;
         transform: translateY(-100%);
+        font-size: 30px;
+        line-height: 1;
       }
+
       .motto-2 {
         display: block;
-        line-height: 1;
         font-size: 20px;
+        line-height: 1;
       }
     }
   }
+
   .menu {
     display: flex;
     width: 950px;
     height: 44px;
     line-height: 44px;
+
     .menu-item {
       padding: 0 5px;
+
       .link {
         display: block;
         padding: 0 10px;
@@ -148,28 +169,32 @@ export default defineComponent({
       }
     }
   }
+
   .header-fixed {
     display: flex;
     position: fixed;
     z-index: 10;
-    left: 0;
     top: 0;
     right: 0;
-    height: 50px;
-    line-height: 50px;
+    left: 0;
     align-items: center;
+    height: 50px;
+    transform: translateY(-100%);
+    transition: all 0.3s ease-out;
     background: rgba(255, 250, 240, 0.95);
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease-out;
-    transform: translateY(-100%);
+    line-height: 50px;
+
     &.show {
       transform: translateY(0);
     }
   }
 }
+
 @media (max-width: 950px) {
   .nav {
     width: 100%;
+
     .menu {
       width: 100%;
     }
