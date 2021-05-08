@@ -22,5 +22,6 @@ module.exports = {
     'import/no-unresolved': 'off',
     'max-len': ['error', { code: 120, ignoreComments: true, ignoreUrls: true }],
     'no-plusplus': 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
   },
 };

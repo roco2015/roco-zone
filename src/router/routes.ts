@@ -11,6 +11,7 @@ const router = [
   {
     name: 'note',
     path: '/note',
+    redirect: '/note/notelist',
     component: () => import(/* webpackChunkName: 'note' */ '@/views/note/NoteIndex.vue'),
     children: [
       {
