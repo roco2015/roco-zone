@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="copyright">
-      <router-link :to="{ name: 'cv' }">Copyright &copy; 圆企鹅</router-link>
+      <router-link :to="{ name: 'index' }">Copyright &copy; 圆企鹅</router-link>
       <a target="_blank" href="https://beian.miit.gov.cn/">辽ICP备2020012261号-1</a>
       <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=21011402000290">
         <img src="/img/icons/beian.png" class="icon" />
@@ -12,12 +12,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-@Component
-export default class Footer extends Vue {}
 </script>
 
-<style lang="less" scoped>
+<style lang="postcss" scoped>
 .footer {
   position: relative;
   height: 50px;

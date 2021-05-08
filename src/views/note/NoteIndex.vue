@@ -7,12 +7,14 @@
         <note-box v-for="note of notes.notes" :key="note.title" :note="note"></note-box>
       </div>
     </section>
+    <the-footer></the-footer>
   </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import TheNav from '@/components/common/nav/TheNav.vue';
+import TheNav from '@/components/common/TheNav.vue';
+import TheFooter from '@/components/common/TheFooter.vue';
 import NoteBox from './components/NoteBox.vue';
 import notesList from './data/note.json';
 
@@ -20,6 +22,7 @@ export default defineComponent({
   name: 'NoteIndex',
   components: {
     TheNav,
+    TheFooter,
     NoteBox,
   },
   data() {

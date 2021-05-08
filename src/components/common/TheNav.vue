@@ -1,7 +1,7 @@
 <template>
   <div class="nav">
     <header class="header">
-      <router-link :to="{ name: 'index' }" class="header-logo"></router-link>
+      <router-link :to="{ name: 'index' }" class="logo"></router-link>
       <div class="header-icon">
         <a href="https://github.com/roco2015" target="_blank" title="roco2015@github.com">
           <svg class="svg-icon" aria-hidden="true">
@@ -88,21 +88,21 @@ export default defineComponent({
   padding: 0 15px;
   font-weight: 500;
 
+  .logo {
+    align-self: stretch;
+    width: 100px;
+    margin: 0 15px;
+    background: url("@/assets/images/logo.png") no-repeat center;
+    background-size: contain;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+  }
+
   .header {
     display: flex;
     height: 124px;
     margin-bottom: 20px;
     padding-top: 60px;
     line-height: 64px;
-
-    .header-logo {
-      align-self: stretch;
-      width: 100px;
-      margin: 0 15px;
-      background: url("@/assets/images/logo.png") no-repeat center;
-      background-size: contain;
-      filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
-    }
 
     .header-icon {
       display: flex;
@@ -125,6 +125,9 @@ export default defineComponent({
     }
 
     .header-motto {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
       font-family:
         muyaosoftbrush,
         arial,
@@ -135,19 +138,17 @@ export default defineComponent({
         STHeitiSC-Light,
         Microsoft Yahei,
         sans-serif;
+      text-shadow: 1px 1px white;
+      filter: drop-shadow(2px 4px 6px #6cf);
 
       .motto-1 {
-        display: block;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-100%);
-        font-size: 30px;
+        font-size: 40px;
         line-height: 1;
       }
 
       .motto-2 {
-        display: block;
-        font-size: 20px;
+        align-self: flex-end;
+        font-size: 30px;
         line-height: 1;
       }
     }
