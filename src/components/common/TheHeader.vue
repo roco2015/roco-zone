@@ -1,7 +1,7 @@
 <template>
   <div class="header-wrap">
     <header class="header">
-      <router-link :to="{ name: 'index' }" class="logo"></router-link>
+      <router-link :to="{ name: 'home' }" class="logo"></router-link>
       <div class="header-icon">
         <a href="https://github.com/roco2015" target="_blank" title="roco2015@github.com">
           <svg class="svg-icon" aria-hidden="true">

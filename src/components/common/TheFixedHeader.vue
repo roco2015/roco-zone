@@ -1,6 +1,6 @@
 <template>
   <header :class="{ show: fixedHeaderVisible }" class="header-fixed">
-    <router-link :to="{ name: 'index' }" class="logo"></router-link>
+    <router-link :to="{ name: 'home' }" class="logo"></router-link>
   </header>
 </template>
 
@@ -45,6 +45,7 @@ export default defineComponent({
 <style lang="postcss" scoped>
 .header-fixed {
   display: flex;
+  visibility: hidden;
   position: fixed;
   z-index: 10;
   top: 0;
@@ -59,6 +60,7 @@ export default defineComponent({
   line-height: 50px;
 
   &.show {
+    visibility: visible;
     transform: translateY(0);
   }
 }
