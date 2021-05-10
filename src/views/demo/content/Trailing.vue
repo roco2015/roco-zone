@@ -101,7 +101,7 @@ export default defineComponent({
     };
     const clearCanvas = () => {
       ctx.shadowBlur = 0;
-      ctx.fillStyle = `rgba(255, 255, 255, ${Math.abs(trailSize - 1)})`;
+      ctx.fillStyle = `rgba(0, 0, 0, ${Math.abs(trailSize - 1)})`;
       ctx.rect(0, 0, width, height);
       ctx.fill();
     };
