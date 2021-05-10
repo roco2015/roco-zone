@@ -22,7 +22,10 @@
     <dd>但实际回款金额是否为负，由回款状态决定。这时候应该用状态来判断</dd>
     <dd>不能以当前需求满足为标准。比如说之后就出了一个需求：回款金额，可以为负了</dd>
 
-    <dt>7. 尽量使用纯函数，少用全局变量</dt>
+    <dt>7. 尽量使用纯函数，少用全局变量，少副作用</dt>
+
+    <dt>8. 尽量不要出现超长调用链</dt>
+    <dd>a. e.g. A调用B，B调用C，C调用D这种。 如果出现A1，也想用BC，但不想用D，就会出现文</dd>
   </dl>
 </template>
 
@@ -41,6 +44,8 @@ export default defineComponent({
 
   dt {
     margin-top: 3em;
+    font-size: 1.2em;
+    font-weight: 500;
   }
 
   dd {
