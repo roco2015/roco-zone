@@ -8,7 +8,7 @@
       <div
         v-for="(url, index) of images"
         :key="index"
-        :style="{ 'background-image': 'url(' + url + ')' }"
+        :style="{ backgroundImage: 'url(' + url + ')' }"
         class="pic-wall"
       />
     </div>
