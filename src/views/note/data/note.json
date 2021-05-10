@@ -15,9 +15,14 @@
       {
         "title": "照片墙",
         "subTitle": "原生js操作dom",
-        "url": "//8c70426d.wiz03.com/wapp/pages/view/share/s/2cs49J0WR4nJ2Drsge2YCvTd2ODRC01FDQrn2RyEmE1gppMW",
         "demo": "picWall",
-        "code": "//github.com/roco2015/blog/blob/master/src/views/demo/PicWall.vue"
+        "code": "//github.com/roco2015/roco-zone/blob/main/src/views/demo/content/PicWall.vue"
+      },
+      {
+        "title": "拖尾效果",
+        "subTitle": "canvas",
+        "demo": "trailing",
+        "code": "//github.com/roco2015/roco-zone/blob/main/src/views/demo/content/Trailing.vue"
       }
     ]
   }

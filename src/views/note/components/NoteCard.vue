@@ -16,9 +16,7 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent, PropType,
-} from 'vue';
+import { defineComponent, PropType } from 'vue';
 
 interface Note {
   title: string;

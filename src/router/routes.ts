@@ -36,6 +36,11 @@ const router = [
         path: '/demo/picwall',
         component: () => import(/* webpackChunkName: 'demo' */ '@/views/demo/content/PicWall.vue'),
       },
+      {
+        name: 'trailing',
+        path: '/demo/trailing',
+        component: () => import(/* webpackChunkName: 'demo' */ '@/views/demo/content/Trailing.vue'),
+      },
     ],
   },
 ];
