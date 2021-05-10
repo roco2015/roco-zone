@@ -1,6 +1,7 @@
 <template>
   <the-header></the-header>
   <the-fixed-header></the-fixed-header>
+  <section class="sec-banner"></section>
   <the-footer></the-footer>
 </template>
 
@@ -21,4 +22,36 @@ export default defineComponent({
 </script>
 
 <style lang="postcss" scoped>
+.sec-banner {
+  position: relative;
+  width: 950px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: url('@/assets/images/home/banner1.png') no-repeat center;
+  background-size: contain;
+  box-shadow: 0 12px 50px -30px rgba(0, 0, 0, 0.6);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  &::before {
+    left: 10px;
+    transform: rotateY(180deg);
+    background: url('@/assets/images/icons/pin2.png') no-repeat center;
+    background-size: contain;
+  }
+
+  &::after {
+    right: 10px;
+    background: url('@/assets/images/icons/pin1.png') no-repeat center;
+    background-size: contain;
+  }
+}
 </style>
