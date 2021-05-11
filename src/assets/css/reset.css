@@ -71,12 +71,6 @@ canvas {
   display: block;
 }
 
-li,
-ol,
-ul {
-  list-style: none;
-}
-
 a {
   color: var(--info);
   text-decoration: none;
@@ -136,17 +130,6 @@ textarea {
 body {
   background: var(--bg);
   color: var(--dark);
-  font-family:
-    'SF Pro SC',
-    'SF Pro Text',
-    'SF Pro Icons',
-    PingFang SC,
-    Lantinghei SC,
-    Microsoft Yahei,
-    Hiragino Sans GB,
-    Microsoft Sans serif,
-    WenQuanYi Micro Hei,
-    sans-serif !important;
   font-size: 14px;
   line-height: 26px;
 }

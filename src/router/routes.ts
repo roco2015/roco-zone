@@ -11,18 +11,18 @@ const router = [
   {
     name: 'note',
     path: '/note',
-    redirect: '/note/notelist',
+    redirect: '/note/list',
     component: () => import(/* webpackChunkName: 'note' */ '@/views/note/NoteIndex.vue'),
     children: [
       {
         name: 'noteList',
-        path: '/note/notelist',
+        path: '/note/list',
         component: () => import(/* webpackChunkName: 'note' */ '@/views/note/content/NoteList.vue'),
       },
       {
-        name: 'codingBetter',
-        path: '/note/codingbetter',
-        component: () => import(/* webpackChunkName: 'note' */ '@/views/note/content/CodingBetter.vue'),
+        name: 'noteContent',
+        path: '/note/content',
+        component: () => import(/* webpackChunkName: 'note' */ '@/views/note/content/NoteContent.vue'),
       },
     ],
   },

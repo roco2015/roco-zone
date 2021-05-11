@@ -1,10 +1,10 @@
 <template>
   <div class="box">
-    <router-link v-if="note.routeName" :to="{ name: note.routeName }" class="link">
+    <router-link v-if="note.name" :to="{ name: 'noteContent', query: { name: note.name} }" class="link">
       <h5 class="title">{{ note.title }}</h5>
       <div class="sub-title">{{ note.subTitle }}</div>
     </router-link>
-    <a v-if="!note.routeName" :href="note.url" class="link">
+    <a v-if="!note.name" :href="note.url" class="link">
       <h5 class="title">{{ note.title }}</h5>
       <div class="sub-title">{{ note.subTitle }}</div>
     </a>
@@ -21,7 +21,7 @@ import { defineComponent, PropType } from 'vue';
 interface Note {
   title: string;
   subTitle?: string;
-  routeName?: string;
+  name?: string;
   url?: string;
   demo?: string;
   code?: string;
