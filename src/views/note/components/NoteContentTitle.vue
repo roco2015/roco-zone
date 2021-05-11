@@ -30,6 +30,8 @@ export default defineComponent({
   z-index: 11;
   top: 0;
   margin-bottom: 20px;
+  background: rgba(255, 250, 240, 0.95);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
 
   .title {
     text-align: left;

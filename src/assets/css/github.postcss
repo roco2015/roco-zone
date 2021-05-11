@@ -14,12 +14,12 @@
     consolas,
     "Courier New",
     monospace;
-  --font_color: #24292e;
+  --font_color: #414a60;
   --background_color: #fff;
   --a_color: #0366d6;
   --a_hover_color: inherit;
   --border_color: #eaecef;
-  --h_color: #292525;
+  --h_color: #414a60;
   --kbd_color: #444d56;
   --kbd_background_color: #fafbfc;
   --pre_background_color: #f6f8fa;
@@ -281,6 +281,7 @@
     margin-top: 0;
     margin-bottom: 16px;
     padding-left: 2em;
+    list-style-type: decimal;
 
     ol {
       margin-top: 0;
@@ -293,12 +294,17 @@
     }
 
     ul {
+      margin-top: 0;
+      margin-bottom: 0;
+      list-style-type: circle;
+
       ol {
         list-style-type: lower-alpha;
       }
 
-      margin-top: 0;
-      margin-bottom: 0;
+      ul {
+        list-style-type: square;
+      }
     }
   }
 
@@ -307,6 +313,7 @@
     margin-top: 0;
     margin-bottom: 16px;
     padding-left: 2em;
+    list-style-type: disc;
 
     ol {
       margin-top: 0;
@@ -319,12 +326,17 @@
     }
 
     ul {
+      margin-top: 0;
+      margin-bottom: 0;
+      list-style-type: circle;
+
       ol {
         list-style-type: lower-alpha;
       }
 
-      margin-top: 0;
-      margin-bottom: 0;
+      ul {
+        list-style-type: square;
+      }
     }
   }
   /* stylelint-enable */
