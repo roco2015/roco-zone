@@ -8,6 +8,7 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import MarkdownIt from 'markdown-it';
+import axios from 'axios';
 
 import NoteContentTitle from '@/views/note/components/NoteContentTitle.vue';
 
@@ -19,8 +20,9 @@ export default defineComponent({
     const html:any = ref({});
     const md = new MarkdownIt();
     onMounted(async () => {
-      const importObj = await import(`./md/${mkName}.md?raw`);
-      html.value = md.render(importObj.default || '');
+      axios.get(`/md/${mkName}.md`).then(({ data }) => {
+        html.value = md.render(data || '');
+      });
     });
     return { html };
   },
