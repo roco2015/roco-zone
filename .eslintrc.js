@@ -5,8 +5,8 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:vue/vue3-essential',
     'airbnb-base',
+    'plugin:vue/vue3-essential',
   ],
   parserOptions: {
     ecmaVersion: 12,
@@ -24,5 +24,6 @@ module.exports = {
     'no-plusplus': 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'no-param-reassign': 'off',
+    'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z]' }], // 暂时解决，import NoteContentTitle from '@/views/note/components/NoteContentTitle.vue';
   },
 };

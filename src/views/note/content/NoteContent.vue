@@ -4,30 +4,23 @@
   </section>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import {
-  defineComponent, onMounted, ref, inject,
+  onMounted, ref, inject,
 } from 'vue';
 import { useRoute } from 'vue-router';
 import MarkdownIt from 'markdown-it';
-// import type { AxiosInstance } from 'axios';
-
+import type { AxiosInstance } from 'axios';
 import NoteContentTitle from '@/views/note/components/NoteContentTitle.vue';
 
-export default defineComponent({
-  components: { NoteContentTitle },
-  setup() {
-    const route = useRoute();
-    const mkName = String(route.query.name);
-    const html = ref('');
-    const md = new MarkdownIt();
-    const ajax = inject('ajax') as any; // AxiosInstance;
-    onMounted(async () => {
-      const { data } = await ajax.get(`/md/${mkName}.md`);
-      html.value = md.render(data || '');
-    });
-    return { html };
-  },
+const route = useRoute();
+const mkName = String(route.query.name);
+const html = ref('');
+const md = new MarkdownIt();
+const ajax = inject('ajax') as AxiosInstance;
+onMounted(async () => {
+  const { data } = await ajax.get(`/md/${mkName}.md`);
+  html.value = md.render(data || '');
 });
 </script>
 
