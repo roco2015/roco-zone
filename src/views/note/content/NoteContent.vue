@@ -5,10 +5,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
+import {
+  defineComponent, onMounted, ref, inject,
+} from 'vue';
 import { useRoute } from 'vue-router';
 import MarkdownIt from 'markdown-it';
-import ajax from '@/utils/ajax';
+// import type { AxiosInstance } from 'axios';
 
 import NoteContentTitle from '@/views/note/components/NoteContentTitle.vue';
 
@@ -19,6 +21,7 @@ export default defineComponent({
     const mkName = String(route.query.name);
     const html = ref('');
     const md = new MarkdownIt();
+    const ajax = inject('ajax') as any; // AxiosInstance;
     onMounted(async () => {
       const { data } = await ajax.get(`/md/${mkName}.md`);
       html.value = md.render(data || '');
