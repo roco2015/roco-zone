@@ -2,13 +2,15 @@
   <the-header></the-header>
   <the-fixed-header></the-fixed-header>
   <section class="sec-banner"></section>
-  <the-footer></the-footer>
+  <wave class="wave"></wave>
+  <the-footer class="footer"></the-footer>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TheHeader from '@/components/common/TheHeader.vue';
 import TheFixedHeader from '@/components/common/TheFixedHeader.vue';
+import Wave from '@/components/canvas/Wave.vue';
 import TheFooter from '@/components/common/TheFooter.vue';
 
 export default defineComponent({
@@ -16,6 +18,7 @@ export default defineComponent({
   components: {
     TheHeader,
     TheFixedHeader,
+    Wave,
     TheFooter,
   },
 });
@@ -53,5 +56,18 @@ export default defineComponent({
     background: url('@/assets/images/icons/pin1.png') no-repeat center;
     background-size: contain;
   }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
 }
 </style>
