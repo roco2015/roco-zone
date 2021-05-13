@@ -11,8 +11,8 @@ export default defineComponent({
   name: 'Wave',
   setup() {
     onMounted(() => {
-      const canvas = document.getElementById('canvas-wave');
-      const ctx = canvas.getContext('2d');
+      const canvas = document.getElementById('canvas-wave') as HTMLCanvasElement;
+      const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
       const width = canvas.offsetWidth;
       const height = canvas.offsetHeight;
       canvas.width = width;
