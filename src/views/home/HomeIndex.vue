@@ -59,7 +59,7 @@ export default defineComponent({
 }
 
 .footer {
-  position: absolute;
+  position: absolute !important;
   bottom: 0;
   width: 100%;
 }
