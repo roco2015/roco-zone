@@ -10,8 +10,8 @@ export default defineComponent({
   name: 'PicComposite',
   setup() {
     onMounted(() => {
-      const canvas = document.querySelector('#canvas');
-      const context = canvas.getContext('2d');
+      const canvas = document.querySelector('#canvas') as HTMLCanvasElement;
+      const context = canvas.getContext('2d') as CanvasRenderingContext2D;
       context.globalCompositeOperation = 'source-over';
       context.fillStyle = '#bbb';
       context.fillRect(0, 0, 243, 233);
