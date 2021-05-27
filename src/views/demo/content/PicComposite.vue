@@ -34,6 +34,15 @@ export default defineComponent({
       canvas.addEventListener('mouseup', () => {
         mouseupFlag = true;
       });
+      const canvasLeft = canvas.getBoundingClientRect().left;
+      const canvasTop = canvas.getBoundingClientRect().top;
+      canvas.addEventListener('touchstart', (e) => {
+        context.moveTo(e.targetTouches[0].clientX - canvasLeft, e.targetTouches[0].clientY - canvasTop);
+      });
+      canvas.addEventListener('touchmove', (e) => {
+        context.lineTo(e.targetTouches[0].clientX - canvasLeft, e.targetTouches[0].clientY - canvasTop);
+        context.stroke();
+      });
     });
   },
 });
@@ -42,6 +51,6 @@ export default defineComponent({
 <style lang="postcss" scoped>
 #canvas {
   display: block;
-  margin: 0 auto;
+  margin: 20px auto 0;
 }
 </style>
