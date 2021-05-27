@@ -3,7 +3,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, onBeforeUnmount } from 'vue';
+import {
+  defineComponent, onMounted, onBeforeUnmount,
+} from 'vue';
 import imgUrl from '@/assets/images/common/gaoxiao1.jpeg';
 
 export default defineComponent({

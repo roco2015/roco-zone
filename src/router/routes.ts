@@ -42,9 +42,9 @@ const router = [
         component: () => import(/* webpackChunkName: 'demo' */ '@/views/demo/content/Trailing.vue'),
       },
       {
-        name: 'picComposite',
-        path: '/demo/piccomposite',
-        component: () => import(/* webpackChunkName: 'demo' */ '@/views/demo/content/PicComposite.vue'),
+        name: 'scratchCard',
+        path: '/demo/scratchcard',
+        component: () => import(/* webpackChunkName: 'demo' */ '@/views/demo/content/ScratchCard.vue'),
       },
     ],
   },

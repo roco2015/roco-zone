@@ -27,8 +27,8 @@
       {
         "title": "刮刮卡",
         "subTitle": "canvas",
-        "demo": "picComposite",
-        "code": "//github.com/roco2015/roco-zone/blob/main/src/views/demo/content/PicComposite.vue"
+        "demo": "scratchCard",
+        "code": "//github.com/roco2015/roco-zone/blob/main/src/views/demo/content/ScratchCard.vue"
       }
     ]
   }
