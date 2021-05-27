@@ -3,13 +3,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue';
+import { defineComponent, onMounted, onBeforeUnmount } from 'vue';
 import imgUrl from '@/assets/images/common/gaoxiao1.jpeg';
 
 export default defineComponent({
   name: 'PicComposite',
   setup() {
+    const bodyEl = document.querySelector('body') as HTMLElement;
     onMounted(() => {
+      bodyEl.style.overflow = 'hidden';
       const canvas = document.querySelector('#canvas') as HTMLCanvasElement;
       const context = canvas.getContext('2d') as CanvasRenderingContext2D;
       context.globalCompositeOperation = 'source-over';
@@ -43,6 +45,9 @@ export default defineComponent({
         context.lineTo(e.targetTouches[0].clientX - canvasLeft, e.targetTouches[0].clientY - canvasTop);
         context.stroke();
       });
+    });
+    onBeforeUnmount(() => {
+      bodyEl.style.overflow = '';
     });
   },
 });
