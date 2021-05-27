@@ -67,10 +67,6 @@ pre {
   -webkit-text-size-adjust: none;
 }
 
-canvas {
-  display: block;
-}
-
 a {
   color: var(--info);
   text-decoration: none;
