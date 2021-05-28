@@ -4,7 +4,7 @@
     <section v-for="notes of notesList" :key="notes.title" class="sec-note">
       <h4 class="sub-title">{{notes.title}}</h4>
       <div class="inner">
-        <note-card v-for="note of notes.notes" :key="note.title" :note="note"></note-card>
+        <note-card v-for="note of notes.notes" :key="note.title" :note="note" class="note-card"></note-card>
       </div>
     </section>
   </main>
@@ -50,7 +50,24 @@ export default defineComponent({
     position: relative;
     flex-flow: row wrap;
     align-items: flex-start;
-    margin: 0 -15px;
+
+    .note-card {
+      margin: 15px 15px 0 0;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .note-wrap {
+    width: 100%;
+  }
+
+  .sec-note {
+    margin-top: 40px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
   }
 }
 </style>

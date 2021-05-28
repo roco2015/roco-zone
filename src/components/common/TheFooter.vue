@@ -21,7 +21,7 @@ export default defineComponent({
 <style lang="postcss" scoped>
 .footer {
   position: relative;
-  height: 50px;
+  min-height: 50px;
   margin: 30px auto 0;
   overflow: hidden;
   color: white;

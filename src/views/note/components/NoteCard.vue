@@ -43,7 +43,6 @@ export default defineComponent({
   display: flex;
   position: relative;
   flex-flow: column;
-  margin: 15px;
   overflow: hidden;
   transition: transform 0.2s linear;
   border-radius: 10px;
