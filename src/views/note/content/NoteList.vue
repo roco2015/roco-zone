@@ -68,6 +68,16 @@ export default defineComponent({
     &:first-of-type {
       margin-top: 0;
     }
+
+    .sub-title {
+      padding-left: 15px;
+    }
+
+    .inner {
+      .note-card {
+        margin: 15px 0 0 15px;
+      }
+    }
   }
 }
 </style>

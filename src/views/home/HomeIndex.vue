@@ -1,9 +1,14 @@
 <template>
-  <the-header></the-header>
-  <the-fixed-header></the-fixed-header>
-  <section class="sec-banner"></section>
-  <wave class="wave"></wave>
-  <the-footer class="footer"></the-footer>
+  <div class="wrap">
+    <the-header></the-header>
+    <the-fixed-header></the-fixed-header>
+    <section class="sec-banner"></section>
+    <div class="content"></div>
+    <div class="bottom">
+      <wave class="wave"></wave>
+      <the-footer class="footer"></the-footer>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -25,6 +30,16 @@ export default defineComponent({
 </script>
 
 <style lang="postcss" scoped>
+.wrap {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+
+  .content {
+    flex: 1;
+  }
+}
+
 .sec-banner {
   position: relative;
   width: 950px;
@@ -58,17 +73,22 @@ export default defineComponent({
   }
 }
 
-.footer {
-  position: absolute !important;
-  bottom: 0;
-  width: 100%;
-}
-
-.wave {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+.bottom {
+  position: relative;
   height: 200px;
+
+  .footer {
+    position: absolute !important;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+  }
 }
 
 @media (max-width: 950px) {
