@@ -70,4 +70,10 @@ export default defineComponent({
   width: 100%;
   height: 200px;
 }
+
+@media (max-width: 950px) {
+  .sec-banner {
+    width: 100%;
+  }
+}
 </style>
