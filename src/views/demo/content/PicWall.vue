@@ -14,112 +14,99 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
+<script setup lang="ts">
 import $ from 'jquery';
-import {
-  defineComponent, ref, onMounted,
-} from 'vue';
+import { ref, onMounted } from 'vue';
 
-export default defineComponent({
-  name: 'PicWall',
-  setup() {
-    const imagesOrigin: string[] = [];
-    const images = ref(imagesOrigin);
-    let nextImages: string[] = [];
-    const width = window.innerWidth;
-    const height = window.innerHeight - 100 - 50;
-    let page = 0;
-    const pageSize = Math.floor(width / 200) * Math.floor(height / 150);
-    let timing: ReturnType<typeof setTimeout>;
-    const waitingTime = 10000 * 1000;
-    const getNextPics = () => {
-      nextImages = [];
-      if (page > 4) {
-        page = 0;
-      }
-      if (page < 0) {
-        page = 4;
-      }
-      for (let i = 1; i <= 50; i++) {
-        nextImages.push(`/img/picwall/pic-${page}.jpg`);
-      }
-    };
-    const doAnimation = () => {
-      let d = 0; // 延时
-      $('.pic-wall').each((index: number, el: Element) => {
-        d = Math.random() * 1000; // 1ms to 1000ms delay
+const imagesOrigin: string[] = [];
+const images = ref(imagesOrigin);
+let nextImages: string[] = [];
+const width = window.innerWidth;
+const height = window.innerHeight - 100 - 50;
+let page = 0;
+const pageSize = Math.floor(width / 200) * Math.floor(height / 150);
+let timing: ReturnType<typeof setTimeout>;
+const waitingTime = 10000 * 1000;
+const getNextPics = () => {
+  nextImages = [];
+  if (page > 4) {
+    page = 0;
+  }
+  if (page < 0) {
+    page = 4;
+  }
+  for (let i = 1; i <= 50; i++) {
+    nextImages.push(`/img/picwall/pic-${page}.jpg`);
+  }
+};
+const doAnimation = () => {
+  let d = 0; // 延时
+  $('.pic-wall').each((index: number, el: Element) => {
+    d = Math.random() * 1000; // 1ms to 1000ms delay
+    $(el)
+      .delay(d)
+      .animate(
+        { opacity: 0 },
+        {
+          step: (n: number) => {
+            $(el).css('transform', `scale(${n})`);
+          },
+          duration: 300,
+        },
+      )
+      .promise()
+      .done(() => {
+        images.value[index] = nextImages[index];
         $(el)
-          .delay(d)
           .animate(
-            { opacity: 0 },
+            { opacity: 1 },
             {
               step: (n: number) => {
                 $(el).css('transform', `scale(${n})`);
               },
-              duration: 300,
+              duration: 700,
             },
           )
           .promise()
           .done(() => {
-            images.value[index] = nextImages[index];
-            $(el)
-              .animate(
-                { opacity: 1 },
-                {
-                  step: (n: number) => {
-                    $(el).css('transform', `scale(${n})`);
-                  },
-                  duration: 700,
-                },
-              )
-              .promise()
-              .done(() => {
-                $(el).css('transform', 'none');
-              });
+            $(el).css('transform', 'none');
           });
       });
-    };
-    const autoAnmiation = () => {
-      page++;
-      getNextPics();
-      doAnimation();
-      timing = setTimeout(() => {
-        autoAnmiation();
-      }, waitingTime);
-    };
-    const getPrevScreen = () => {
-      clearTimeout(timing);
-      page--;
-      getNextPics();
-      doAnimation();
-      timing = setTimeout(() => {
-        autoAnmiation();
-      }, waitingTime);
-    };
-    const getNextScreen = () => {
-      clearTimeout(timing);
-      page++;
-      getNextPics();
-      doAnimation();
-      timing = setTimeout(() => {
-        autoAnmiation();
-      }, waitingTime);
-    };
-    onMounted(() => {
-      for (let i = 1; i <= pageSize; i++) {
-        images.value.push(`/img/picwall/pic-${page}.jpg`);
-      }
-      timing = setTimeout(() => {
-        autoAnmiation();
-      }, waitingTime);
-    });
-    return {
-      images,
-      getPrevScreen,
-      getNextScreen,
-    };
-  },
+  });
+};
+const autoAnmiation = () => {
+  page++;
+  getNextPics();
+  doAnimation();
+  timing = setTimeout(() => {
+    autoAnmiation();
+  }, waitingTime);
+};
+const getPrevScreen = () => {
+  clearTimeout(timing);
+  page--;
+  getNextPics();
+  doAnimation();
+  timing = setTimeout(() => {
+    autoAnmiation();
+  }, waitingTime);
+};
+const getNextScreen = () => {
+  clearTimeout(timing);
+  page++;
+  getNextPics();
+  doAnimation();
+  timing = setTimeout(() => {
+    autoAnmiation();
+  }, waitingTime);
+};
+onMounted(() => {
+  for (let i = 1; i <= pageSize; i++) {
+    images.value.push(`/img/picwall/pic-${page}.jpg`);
+  }
+  timing = setTimeout(() => {
+    autoAnmiation();
+  }, waitingTime);
 });
 </script>
 

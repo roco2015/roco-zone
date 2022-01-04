@@ -1,23 +1,21 @@
 <template>
   <div class="box">
-    <router-link v-if="note.name" :to="{ name: 'noteContent', query: { name: note.name} }" class="link">
-      <h5 class="title">{{ note.title }}</h5>
-      <div class="sub-title">{{ note.subTitle }}</div>
+    <router-link v-if="note.name" :to="{ name: 'noteContent', query: { name: props.note.name} }" class="link">
+      <h5 class="title">{{ props.note.title }}</h5>
+      <div class="sub-title">{{ props.note.subTitle }}</div>
     </router-link>
-    <a v-if="!note.name" :href="note.url" class="link">
-      <h5 class="title">{{ note.title }}</h5>
-      <div class="sub-title">{{ note.subTitle }}</div>
+    <a v-if="!props.note.name" :href="props.note.url" class="link">
+      <h5 class="title">{{ props.note.title }}</h5>
+      <div class="sub-title">{{ props.note.subTitle }}</div>
     </a>
-    <div v-if="note.demo || note.code " class="footer">
-      <router-link v-if="note.demo" :to="{ name: note.demo }" class="item">demo</router-link>
-      <a v-if="note.code" :href="note.code" target="_blank" class="item">code</a>
+    <div v-if="props.note.demo || props.note.code " class="footer">
+      <router-link v-if="props.note.demo" :to="{ name: props.note.demo }" class="item">demo</router-link>
+      <a v-if="props.note.code" :href="props.note.code" target="_blank" class="item">code</a>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue';
-
+<script setup lang="ts">
 interface Note {
   title: string;
   subTitle?: string;
@@ -26,16 +24,7 @@ interface Note {
   demo?: string;
   code?: string;
 }
-
-export default defineComponent({
-  name: 'NoteBox',
-  props: {
-    note: {
-      type: Object as PropType<Note>,
-      required: true,
-    },
-  },
-});
+const props = defineProps<{ note: Note }>();
 </script>
 
 <style lang="postcss" scoped>

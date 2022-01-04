@@ -10,24 +10,10 @@
   </main>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
 import TheHeader from '@/components/common/TheHeader.vue';
 import NoteCard from '../components/NoteCard.vue';
 import notesList from '../data/note.json';
-
-export default defineComponent({
-  name: 'NoteIndex',
-  components: {
-    TheHeader,
-    NoteCard,
-  },
-  data() {
-    return {
-      notesList,
-    };
-  },
-});
 </script>
 
 <style lang="postcss" scoped>

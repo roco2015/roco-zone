@@ -4,32 +4,20 @@
   </section>
 </template>
 
-<script lang="ts">
-import {
-  defineComponent, onMounted, ref, inject,
-} from 'vue';
+<script setup lang="ts">
+import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import MarkdownIt from 'markdown-it';
-import type { AxiosInstance } from 'axios';
+import { getNoteContent } from '@/api/noteAPI';
 import NoteContentTitle from '@/views/note/components/NoteContentTitle.vue';
 
-export default defineComponent({
-  name: 'NoteContent',
-  components: {
-    NoteContentTitle,
-  },
-  setup() {
-    const route = useRoute();
-    const mkName = String(route.query.name);
-    const html = ref('');
-    const md = new MarkdownIt();
-    const ajax = inject('ajax') as AxiosInstance;
-    onMounted(async () => {
-      const { data } = await ajax.get(`/md/${mkName}.md`);
-      html.value = md.render(data || '');
-    });
-    return { html };
-  },
+const route = useRoute();
+const mkName = String(route.query.name);
+const html = ref('');
+const md = new MarkdownIt();
+onMounted(async () => {
+  const { data } = await getNoteContent(mkName);
+  html.value = md.render(data || '');
 });
 </script>
 

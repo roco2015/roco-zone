@@ -1,31 +1,5 @@
 @charset "UTF-8";
 
-:root {
-  --blue: #007bff;
-  --light-blue: #03a9f4;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #dc3545;
-  --orange: #fd7e14;
-  --yellow: #ffc107;
-  --green: #28a745;
-  --teal: #20c997;
-  --cyan: #17a2b8;
-  --white: #fff;
-  --gray: #6c757d;
-  --gray-light: #9fa3af;
-  --primary: #007bff;
-  --secondary: #6c757d;
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --light: #f8f9fa;
-  --dark: #414a60;
-  --bg: #fffefd;
-}
-
 a,
 b,
 body,
@@ -64,7 +38,7 @@ pre {
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
-  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 a {
@@ -82,7 +56,7 @@ textarea {
 }
 
 a:hover {
-  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
   transition: all linear 0.2s;
   color: var(--light-blue) !important;
   text-decoration: none;
@@ -112,20 +86,20 @@ option,
 select,
 td,
 textarea {
-  font-family: Avenir, Helvetica, Arial, verdana, 'PingFang SC', 'HanHei SC', STHeitiSC-Light, Microsoft Yahei, sans-serif;
+  font-family: Avenir, Helvetica, Arial, verdana, "PingFang SC", "HanHei SC", STHeitiSC-Light, Microsoft Yahei, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 button,
-input[type='button'],
-input[type='number'],
-input[type='password'],
-input[type='search'],
-input[type='submit'],
-input[type='tel'],
-input[type='text'],
+input[type="button"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="submit"],
+input[type="tel"],
+input[type="text"],
 textarea {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 body {
@@ -137,7 +111,7 @@ body {
 
 .btn:hover,
 .ipt:hover {
-  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
   transition: all linear 0.2s;
 }
 

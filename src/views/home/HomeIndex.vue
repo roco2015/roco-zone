@@ -7,22 +7,11 @@
   <the-footer class="footer"></the-footer>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
 import TheHeader from '@/components/common/TheHeader.vue';
 import TheFixedHeader from '@/components/common/TheFixedHeader.vue';
 import Wave from '@/components/canvas/Wave.vue';
 import TheFooter from '@/components/common/TheFooter.vue';
-
-export default defineComponent({
-  name: 'NoteIndex',
-  components: {
-    TheHeader,
-    TheFixedHeader,
-    Wave,
-    TheFooter,
-  },
-});
 </script>
 
 <style lang="postcss" scoped>

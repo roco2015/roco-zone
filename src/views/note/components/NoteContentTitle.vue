@@ -1,26 +1,22 @@
 <template>
   <div class="title-box">
-    <h3 class="title">{{ title }}</h3>
+    <h3 class="title">{{ props.title }}</h3>
     <div class="sub-title">
-      <div class="time">{{ date }}</div>
-      <div class="author">by: {{ author }}</div>
+      <div class="time">{{ props.date }}</div>
+      <div class="author">by: {{ props.author }}</div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import { withDefaults } from 'vue';
 
-export default defineComponent({
-  name: 'NoteTitle',
-  props: {
-    title: String,
-    date: String,
-    author: {
-      type: String,
-      default: '',
-    },
-  },
+const props = withDefaults(defineProps<{
+  title: string,
+  date: string,
+  author?: string
+}>(), {
+  author: '',
 });
 </script>
 

@@ -5,14 +5,6 @@
   </main>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
 import TheFooter from '@/components/common/TheFooter.vue';
-
-export default defineComponent({
-  name: 'NoteIndex',
-  components: {
-    TheFooter,
-  },
-});
 </script>
