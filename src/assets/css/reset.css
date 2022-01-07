@@ -42,7 +42,7 @@ pre {
 }
 
 a {
-  color: var(--info);
+  color: var(--blue);
   text-decoration: none;
 }
 
@@ -57,9 +57,11 @@ textarea {
 
 a:hover {
   transition: all linear 0.2s;
-  transition: all linear 0.2s;
   color: var(--light-blue) !important;
-  text-decoration: none;
+}
+
+a:active {
+  filter: brightness(1.2);
 }
 
 img {
@@ -111,7 +113,6 @@ body {
 
 .btn:hover,
 .ipt:hover {
-  transition: all linear 0.2s;
   transition: all linear 0.2s;
 }
 

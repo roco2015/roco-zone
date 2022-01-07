@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" :class="{'is-mobile': isMobile}">
     <div class="copyright">
       <router-link :to="{ name: 'home' }">Copyright &copy; 圆企鹅</router-link>
       <a target="_blank" href="https://beian.miit.gov.cn/">辽ICP备2020012261号-1</a>
@@ -11,28 +11,18 @@
   </footer>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import { inject } from 'vue';
 
-export default defineComponent({
-});
+const isMobile = inject('isMobile');
 </script>
 
 <style lang="postcss" scoped>
-.footer {
-  position: relative;
-  min-height: 50px;
-  margin: 30px auto 0;
-  overflow: hidden;
-  color: white;
-  font-size: 14px;
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
-}
-
 .copyright {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  align-items: center;
 
   a {
     margin-right: 30px;
@@ -47,4 +37,23 @@ export default defineComponent({
     float: left;
   }
 }
+
+.footer {
+  position: relative;
+  min-height: 50px;
+  margin: 30px auto 0;
+  overflow: hidden;
+  color: white;
+  font-size: 14px;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+
+  &.is-mobile .copyright {
+    flex-direction: column;
+
+    a {
+      margin-right: 0;
+    }
+  }
+}
+
 </style>

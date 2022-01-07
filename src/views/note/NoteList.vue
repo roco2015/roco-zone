@@ -8,12 +8,14 @@
       </div>
     </section>
   </main>
+  <the-footer></the-footer>
 </template>
 
 <script setup lang="ts">
 import TheHeader from '@/components/common/TheHeader.vue';
-import NoteCard from '../components/NoteCard.vue';
-import notesList from '../data/note.json';
+import NoteCard from '@/views/note/components/NoteCard.vue';
+import notesList from '@/views/note/data/note.json';
+import TheFooter from '@/components/common/TheFooter.vue';
 </script>
 
 <style lang="postcss" scoped>
