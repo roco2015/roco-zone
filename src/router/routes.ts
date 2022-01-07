@@ -48,6 +48,11 @@ const router = [
       },
     ],
   },
+  {
+    name: 'mz',
+    path: '/mz',
+    component: () => import(/* webpackChunkName: 'mz' */ '@/views/mz/MengZhanIndex.vue'),
+  },
 ];
 
 export default router;
